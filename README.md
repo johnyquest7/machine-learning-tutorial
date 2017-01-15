@@ -1,14 +1,15 @@
 # Machine learning tutorial
 
-To run this ipython notebook in an executable / interactive environment without installing any software clik the link below. 
+To run this ipython notebook in an executable / interactive environment without installing any software click the link below. 
 
 [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/johnyquest7/machine-learning-tutorial)
 
 This works best on chrome browser. If asked for a kernel, pick Python 3
 
-The service is provided by an open source project mybinder.org. Since it is self funded service outages are possible. 
+The service is provided by an open source project mybinder.org. Since it is self funded, service outages are possible. 
 
-If you would like to learn how to impliment machine learning algorithms using Python, head over to the [wiki page](https://github.com/johnyquest7/machine-learning-tutorial/wiki)
+If you would like to learn how to impliment machine learning algorithms using Python, head over to the [wiki page](https://github.com/johnyquest7/machine-learning-tutorial/wiki). There you can find detailed instructions on installing required software and running the python code.    
+
    
 # Code walk-through
 
@@ -46,7 +47,7 @@ y will contain the data from the column 'class'. 'class' has two values 1= cance
     x=data[['thickness','size','shape','adhesion','single','nuclei','chromatin','nucleoli','mitosis']]   
     y=data['class']
 
-Our goal is to create a logistic regression model to predict breast cancer. Once we create the model, we need to test it to assess the accuracy of our model. To achieve this, we split our data into training and testing data set.A logistic model will be created based on the data in the training set. Then we use this model to predict cancer in the testing set. Since we already know the occurrence of cancer in the test data, the predicted values can be compared with the known values to assess the performance of the model.
+Our goal is to create a logistic regression model to predict breast cancer. Once we create the model, we need to test it to assess the accuracy of our model. To achieve this, we split our data into training and testing data sets.A logistic regression model will be created based on the data in the training set. Then we will use this model to predict cancer in the testing set. Since we already know the occurrence of cancer in the test data, the predicted values can be compared with the known values to assess the performance of the model.
 We need Sklearn Python library to split the data. This library also has the logistic regression function in it.
 
     from sklearn.cross_validation import train_test_split   
@@ -57,7 +58,7 @@ First we import the function train_test_split from the cross_validation section 
     from sklearn.linear_model import LogisticRegression    
     logreg = LogisticRegression() logreg.fit(x_train,y_train)
 
-Next we import logistic regression model from Sklearn. Then we assign LogisticRegression() function to the model variable logreg. After this we train the model logreg using the fit function. Our model is trained and we can use it to predict cancer.
+Next we import logistic regression model from Sklearn. Then we assign LogisticRegression() function to the model variable logreg. After this we train the model logreg using the 'fit' function. Our model is trained and we can use it to predict cancer.
 
     y_pred_class=logreg.predict(x_test)   
 
