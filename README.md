@@ -43,13 +43,14 @@ Drops any rows that has missing values.
 Next we have to divide the data set into x and y. x will contain features that we will use to predict cancer. x will contain the all columns of the dataframe variable 'data' except 'id' and 'class'.
 y will contain the data from the column 'class'. 'class' has two values 1= cancer and 0=no cancer. This whole operation is done by the following two lines of code.
 
-x=data[['thickness','size','shape','adhesion','single','nuclei','chromatin','nucleoli','mitosis']]
+x=data[['thickness','size','shape','adhesion','single','nuclei','chromatin','nucleoli','mitosis']]   
 y=data['class']
 
 Our goal is to create a logistic regression model to predict breast cancer. Once we create the model, we need to test it to assess the accuracy of our model. To achieve this, we split our data into training and testing data set.A logistic model will be created based on the data in the training set. Then we use this model to predict cancer in the testing set. Since we already know the occurrence of cancer in the test data, the predicted values can be compared with the known values to assess the performance of the model.
 We need Sklearn Python library to split the data. This library also has the logistic regression function in it.
 
-from sklearn.cross_validation import train_test_split x_train, x_test, y_train, y_test = train_test_split(x, y, random_state=0)
+from sklearn.cross_validation import train_test_split   
+x_train, x_test, y_train, y_test = train_test_split(x, y, random_state=0)
 
 First we import the function train_test_split from the cross_validation section of Sklearn library. The second line splits our x (features) and y(cancer or not) data into x_train, x_test, y_train and y_test.
 
@@ -57,7 +58,8 @@ from sklearn.linear_model import LogisticRegression logreg = LogisticRegression(
 
 Next we import logistic regression model from Sklearn. Then we assign LogisticRegression() function to the model variable logreg. After this we train the model logreg using the fit function. Our model is trained and we can use it to predict cancer.
 
-y_pred_class=logreg.predict(x_test)
+y_pred_class=logreg.predict(x_test)   
+
 We use our model 'logreg''s 'predict' function to make predictions based on x_test and store it to the y_pred_class.
 
 from sklearn import metrics print (metrics.accuracy_score(y_test, y_pred_class))
