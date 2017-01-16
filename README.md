@@ -51,7 +51,10 @@ Our goal is to create a logistic regression model to predict breast cancer. Once
 We need Sklearn Python library to split the data. This library also has the logistic regression function in it.
 
     from sklearn.cross_validation import train_test_split   
-    x_train, x_test, y_train, y_test = train_test_split(x, y, random_state=0)
+    x_train, x_test, y_train, y_test = train_test_split(x, y, random_state=0)   
+    
+The data is split into training and testing groups in a random manner. "random_state=0", keep this as zero to make the results reporducible. If you want you can chnage it to any other number, but this will split the data in a different manner.    
+
 
 First we import the function train_test_split from the cross_validation section of Sklearn library. The second line splits our x (features) and y(cancer or not) data into x_train, x_test, y_train and y_test.
 
